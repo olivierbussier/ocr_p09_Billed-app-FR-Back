@@ -79,7 +79,7 @@ const reset = async () => {
       await load()
   }
 
-module.exports = { 
+module.exports = {
   load,
   clear,
   reset

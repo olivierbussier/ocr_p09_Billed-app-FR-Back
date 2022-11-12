@@ -7,7 +7,7 @@ const wrongValue =
 
 
 describe("Test the jwt service", () => {
-  
+
   test("It should encrypt to-encrypt", () => {
     expect(jwt.encrypt("to-encrypt")).toMatch(/([a-zA-Z0-9-_])+\.([a-zA-Z0-9-_])+\.([a-zA-Z0-9-_])+/);
   });
@@ -22,6 +22,6 @@ describe("Test the jwt service", () => {
       } catch (err) {
         expect(err.message).toMatch('invalid signature')
       }
-    
+
   });
 });
