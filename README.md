@@ -66,6 +66,12 @@ cd Billed-app-FR-Back
 npm install
 ```
 
+### On windows, it is necessary to install a dependency to emulate env like linux
+
+```
+npm i win-node-env
+```
+
 ### Run the API :
 
 ```
