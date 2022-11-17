@@ -9,16 +9,7 @@ const create = async (req, res) => {
   if (!user) return res.status(401).send({ message: 'user must be authenticated' });
   try {
     const {
-      name,
-      type,
-      email,
-      date,
-      vat,
-      pct,
-      commentary,
-      status,
-      commentAdmin,
-      amount,
+      name, type, email, date, vat, pct, commentary, status, commentAdmin, amount,
     } = req.body;
     const { file } = req;
     const bill = await Bill.create({
@@ -31,8 +22,8 @@ const create = async (req, res) => {
       commentary,
       status,
       commentAdmin,
-      fileName: isPicture(file.mimetype) ? file.originalname : 'null',
-      filePath: isPicture(file.mimetype) ? file.path : 'null',
+      fileName: isPicture(file.mimetype) ? file.originalname : false,
+      filePath: isPicture(file.mimetype) ? file.path : false,
       amount,
     });
     return res.status(201).json(bill);
